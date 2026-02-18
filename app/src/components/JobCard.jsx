@@ -43,6 +43,7 @@ export default function JobCard({ job, candidate }) {
       const res = await applyToJob({
         uuid: candidate.uuid,
         candidateId: candidate.candidateId,
+        applicationId: candidate.applicationId,
         jobId: job.id,
         repoUrl: trimmed,
       });

@@ -34,11 +34,11 @@ export async function getJobsList() {
   return res.json();
 }
 
-export async function applyToJob({ uuid, candidateId, jobId, repoUrl }) {
+export async function applyToJob({ uuid, candidateId, applicationId, jobId, repoUrl }) {
   const res = await fetch(`${BASE_URL}/api/candidate/apply-to-job`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ uuid, candidateId, jobId, repoUrl }),
+    body: JSON.stringify({ uuid, candidateId, applicationId, jobId, repoUrl }),
   });
   if (!res.ok) throw new Error(await parseError(res));
   return res.json();
